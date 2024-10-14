@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Weather Сomparison</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">Погода</string>
+    <string name="title_five_day">На пять дней</string>
+    <string name="title_3hours">На 3 часа</string>
+    <string name="title_today">На сутки</string>
 </resources>

@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_3hours">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.weatheromparison.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_3hours"
+        android:name="com.example.weatheromparison.ui.ui.threeHours.ThreeHoursFragment"
+        android:label="@string/title_3hours"
+        tools:layout="@layout/fragment_three_hours" />
+    <fragment
+        android:id="@+id/navigation_today"
+        android:name="com.example.weatheromparison.ui.ui.fiveDays.TodayFragment"
+        android:label="@string/title_today"
+        tools:layout="@layout/fragment_today" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.weatheromparison.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_five_days"
+        android:name="com.example.weatheromparison.ui.ui.fiveDays.FiveDaysFragment"
+        android:label="@string/title_five_day"
+        tools:layout="@layout/fragment_five_days" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.weatheromparison.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
 </navigation>

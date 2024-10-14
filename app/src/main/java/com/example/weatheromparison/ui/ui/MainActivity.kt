@@ -1,4 +1,4 @@
-package com.example.weatheromparison
+package com.example.weatheromparison.ui.ui
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.weatheromparison.R
 import com.example.weatheromparison.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -22,14 +23,17 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.navigation_3hours, R.id.navigation_today, R.id.navigation_five_days
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.hide()
+        }
     }
+
 }

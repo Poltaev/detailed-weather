@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -39,6 +40,23 @@ android {
 }
 
 dependencies {
+    // зависимости баз данных
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.activity)
+    ksp(libs.androidx.room.compiler)
+    // ресайкл вью (прокручиваемый список)
+    implementation(libs.androidx.recyclerview)
+    // навигация
+    implementation(libs.androidx.navigation.compose)
+    // Glide для картинок
+    implementation(libs.glide)
+    // проверка загрузок
+    implementation(libs.logging.interceptor)
+    implementation(libs.okhttp)
+    //зависимости ретрофит для загрузок
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -52,3 +70,4 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
+
