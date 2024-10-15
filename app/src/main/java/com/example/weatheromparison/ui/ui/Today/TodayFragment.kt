@@ -35,9 +35,9 @@ import kotlin.math.log
 class TodayFragment : Fragment() {
     private lateinit var pLauncher: ActivityResultLauncher<String>
     private lateinit var binding: FragmentTodayBinding
-    private lateinit var fusedClient : FusedLocationProviderClient
-    private var lon : Double = 50.15
-    private var lat : Double = 53.20
+    private lateinit var fusedClient: FusedLocationProviderClient
+    private var lon: Double = 50.15
+    private var lat: Double = 53.20
     private val launcher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { map ->
@@ -62,6 +62,7 @@ class TodayFragment : Fragment() {
         super.onStart()
         checkPermissions()
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

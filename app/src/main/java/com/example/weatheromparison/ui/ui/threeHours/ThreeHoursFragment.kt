@@ -32,7 +32,7 @@ import com.google.android.gms.tasks.CancellationTokenSource
 import kotlinx.coroutines.launch
 
 class ThreeHoursFragment : Fragment() {
-    private lateinit var fusedClient : FusedLocationProviderClient
+    private lateinit var fusedClient: FusedLocationProviderClient
     private var lon: Double = 50.15
     private var lat: Double = 53.20
     private val launcher = registerForActivityResult(
@@ -42,7 +42,7 @@ class ThreeHoursFragment : Fragment() {
             startLocation()
         }
     }
-    private val locationCallback = object : LocationCallback () {
+    private val locationCallback = object : LocationCallback() {
         override fun onLocationResult(p0: LocationResult) {
             lon = p0.lastLocation?.longitude ?: 50.15
             lat = p0.lastLocation?.latitude ?: 53.20

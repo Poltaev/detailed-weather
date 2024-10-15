@@ -35,9 +35,9 @@ import kotlinx.coroutines.launch
 class FiveDaysFragment : Fragment() {
     private lateinit var pLauncher: ActivityResultLauncher<String>
     private lateinit var binding: FragmentFiveDaysBinding
-    private lateinit var fusedClient : FusedLocationProviderClient
-    private var lon : Double = 50.15
-    private var lat : Double = 53.20
+    private lateinit var fusedClient: FusedLocationProviderClient
+    private var lon: Double = 50.15
+    private var lat: Double = 53.20
     private val launcher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { map ->
@@ -61,6 +61,7 @@ class FiveDaysFragment : Fragment() {
         super.onStart()
         checkPermissions()
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -80,7 +81,7 @@ class FiveDaysFragment : Fragment() {
             Log.i("fh", "Загрузка2")
             val listWeatherToday = mutableListOf<Temp>()
             binding.NameCity.text = getWeather.city.name
-            for(x in 0 .. 39) {
+            for (x in 0..39) {
                 if (x % 2 == 0) {
                     listWeatherToday.add(getWeather.list[x])
                 }
@@ -96,8 +97,9 @@ class FiveDaysFragment : Fragment() {
 //            Toast.makeText(activity, " Permission is ${it}", Toast.LENGTH_LONG).show()
         }
     }
-    private fun checkPermission () {
-        if (!isPermissionGranted(Manifest.permission.ACCESS_FINE_LOCATION)){
+
+    private fun checkPermission() {
+        if (!isPermissionGranted(Manifest.permission.ACCESS_FINE_LOCATION)) {
             permissionListner()
             pLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         }
