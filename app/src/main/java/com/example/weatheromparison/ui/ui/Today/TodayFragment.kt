@@ -33,7 +33,6 @@ import kotlinx.coroutines.launch
 import kotlin.math.log
 
 class TodayFragment : Fragment() {
-    private lateinit var pLauncher: ActivityResultLauncher<String>
     private lateinit var binding: FragmentTodayBinding
     private lateinit var fusedClient: FusedLocationProviderClient
     private var lon: Double = 50.15
@@ -94,18 +93,6 @@ class TodayFragment : Fragment() {
         }
     }
 
-    private fun permissionListner() {
-        pLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) {
-//            Toast.makeText(activity, " Permission is ${it}", Toast.LENGTH_LONG).show()
-        }
-    }
-
-    private fun checkPermission() {
-        if (!isPermissionGranted(Manifest.permission.ACCESS_FINE_LOCATION)) {
-            permissionListner()
-            pLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
-        }
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

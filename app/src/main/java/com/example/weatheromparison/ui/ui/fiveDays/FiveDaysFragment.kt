@@ -33,7 +33,6 @@ import com.google.android.gms.tasks.CancellationTokenSource
 import kotlinx.coroutines.launch
 
 class FiveDaysFragment : Fragment() {
-    private lateinit var pLauncher: ActivityResultLauncher<String>
     private lateinit var binding: FragmentFiveDaysBinding
     private lateinit var fusedClient: FusedLocationProviderClient
     private var lon: Double = 50.15
@@ -93,19 +92,6 @@ class FiveDaysFragment : Fragment() {
             }
             val listWeatherTodayAdapter = FiveDayAdapter(listWeatherToday)
             binding.recyclerViewFiveDays.adapter = listWeatherTodayAdapter
-        }
-    }
-
-    private fun permissionListner() {
-        pLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) {
-//            Toast.makeText(activity, " Permission is ${it}", Toast.LENGTH_LONG).show()
-        }
-    }
-
-    private fun checkPermission() {
-        if (!isPermissionGranted(Manifest.permission.ACCESS_FINE_LOCATION)) {
-            permissionListner()
-            pLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         }
     }
 
