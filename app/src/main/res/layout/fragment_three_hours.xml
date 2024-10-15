@@ -297,4 +297,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textPercentageOfClouds" />
 
+    <ImageButton
+        android:id="@+id/imageButtonReboot"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="144dp"
+        android:background="@color/yellowInvisible"
+        android:src="@drawable/baseline_autorenew_24"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

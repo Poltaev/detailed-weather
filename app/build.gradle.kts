@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation (libs.play.services.location)
     // зависимости баз данных
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
@@ -69,5 +70,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(kotlin("script-runtime"))
 }
 
