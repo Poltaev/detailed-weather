@@ -49,6 +49,7 @@ class ThreeHoursFragment : Fragment() {
             binding.imageButtonReboot.setOnClickListener {
                 lon = p0.lastLocation?.longitude ?: 50.15
                 lat = p0.lastLocation?.latitude ?: 53.20
+                getAdapter()
             }
         }
     }
@@ -74,7 +75,10 @@ class ThreeHoursFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        getAdapter()
+    }
 
+    private fun getAdapter() {
         lifecycleScope.launch {
             val listTempo = viewModel.getThreeHoursWeather(lon, lat)
             val tempo = listTempo.list[1]
@@ -129,8 +133,6 @@ class ThreeHoursFragment : Fragment() {
             binding.textVisibility.text = tempo.visibility.toString() + " м"
 
         }
-
-
     }
 
     override fun onDestroyView() {

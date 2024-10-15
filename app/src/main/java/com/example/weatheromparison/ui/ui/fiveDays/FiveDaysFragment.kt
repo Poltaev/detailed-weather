@@ -52,6 +52,7 @@ class FiveDaysFragment : Fragment() {
             binding.imageButtonReboot.setOnClickListener {
                 lon = p0.lastLocation?.longitude ?: 50.15
                 lat = p0.lastLocation?.latitude ?: 53.20
+                getAdapter()
             }
         }
     }
@@ -74,7 +75,11 @@ class FiveDaysFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        checkPermission()
+        getAdapter()
+
+    }
+
+    private fun getAdapter() {
         lifecycleScope.launch {
             Log.i("fh", "Загрузка1")
             val getWeather = viewModel.getFiveDayWeather(lon, lat)
@@ -89,7 +94,6 @@ class FiveDaysFragment : Fragment() {
             val listWeatherTodayAdapter = FiveDayAdapter(listWeatherToday)
             binding.recyclerViewFiveDays.adapter = listWeatherTodayAdapter
         }
-
     }
 
     private fun permissionListner() {

@@ -52,6 +52,7 @@ class TodayFragment : Fragment() {
             binding.imageButtonReboot.setOnClickListener {
                 lon = p0.lastLocation?.longitude ?: 50.15
                 lat = p0.lastLocation?.latitude ?: 53.20
+                getAdapter()
             }
         }
     }
@@ -75,8 +76,10 @@ class TodayFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        checkPermission()
-        Log.i("fh", "вью")
+        getAdapter()
+    }
+
+    private fun getAdapter() {
         lifecycleScope.launch {
             Log.i("fh", "Загрузка1")
             val getWeather = viewModel.getTodaYWeather(lon, lat)
