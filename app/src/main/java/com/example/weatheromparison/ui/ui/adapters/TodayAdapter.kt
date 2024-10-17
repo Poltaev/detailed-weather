@@ -64,7 +64,7 @@ class TodayAdapter (
                     }
                 }
                 textMaxWind.text = item.wind.gust.toString()+ " м/с"
-                textProbabilityOfPrecipitation.text = item.pop.toString() + " %"
+                textProbabilityOfPrecipitation.text = (item.pop * 100).toString() + " %"
                 textPercentageOfClouds.text = item.clouds.all.toString()  + " %"
                 textVisibility.text = item.visibility.toString()  + " м"
             }

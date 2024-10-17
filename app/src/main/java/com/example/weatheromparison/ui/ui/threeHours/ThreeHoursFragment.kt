@@ -128,7 +128,7 @@ class ThreeHoursFragment : Fragment() {
                 }
             }
             binding.textMaxWind.text = tempo.wind.gust.toString() + " м/с"
-            binding.textProbabilityOfPrecipitation.text = tempo.pop.toString() + " %"
+            binding.textProbabilityOfPrecipitation.text = (tempo.pop * 100).toString() + " %"
             binding.textPercentageOfClouds.text = tempo.clouds.all.toString() + " %"
             binding.textVisibility.text = tempo.visibility.toString() + " м"
 
