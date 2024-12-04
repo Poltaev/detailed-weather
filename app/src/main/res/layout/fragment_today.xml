@@ -53,7 +53,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="144dp"
         android:background="@color/yellowInvisible"
         android:src="@drawable/baseline_autorenew_24"
         app:layout_constraintStart_toStartOf="@+id/imageView"

@@ -14,12 +14,12 @@ class OpenWeatherMapRepository {
         level = HttpLoggingInterceptor.Level.BODY
     }
     private val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
-    private val retrofit =
-        Retrofit.Builder()
-            .baseUrl("https://api.openweathermap.org")
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+        private val retrofit =
+            Retrofit.Builder()
+                .baseUrl("https://api.openweathermap.org")
+                .client(client)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
 
     private val apiOpenWeatherMap: OpenWeatherMapApi =
         retrofit.create(OpenWeatherMapApi::class.java)
@@ -38,7 +38,7 @@ class OpenWeatherMapRepository {
             )
             return weatherFiveDays
         } catch (e: Throwable) {
-return FiveDayWeatherDto(listOf(), City("String"))
+            return FiveDayWeatherDto(listOf(), City("String"))
         }
     }
 
