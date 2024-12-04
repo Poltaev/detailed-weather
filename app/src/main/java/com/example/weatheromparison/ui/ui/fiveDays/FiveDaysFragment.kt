@@ -3,6 +3,7 @@ package com.example.weatheromparison.ui.ui.fiveDays
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
+import android.location.LocationRequest
 import android.os.Bundle
 import android.os.Looper
 import android.util.Log
@@ -10,8 +11,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -25,11 +26,11 @@ import com.example.weatheromparison.ui.ui.funGranted.isPermissionGranted
 import com.example.weatheromparison.ui.ui.threeHours.ThreeHoursViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
-import com.google.android.gms.tasks.CancellationTokenSource
+
+
 import kotlinx.coroutines.launch
 
 class FiveDaysFragment : Fragment() {
@@ -102,7 +103,7 @@ class FiveDaysFragment : Fragment() {
 
     @SuppressLint("MissingPermission")
     private fun startLocation() {
-        val request = LocationRequest.create()
+        val request = com.google.android.gms.location.LocationRequest.create()
             .setInterval(1_000)
             .setPriority(Priority.PRIORITY_HIGH_ACCURACY)
         fusedClient.requestLocationUpdates(
