@@ -9,14 +9,14 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="197dp"
+        android:layout_height="197sp"
         android:alpha="0.8"
         android:scaleType="fitXY"
         android:src="@drawable/img"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+         />
 
     <TextView
         android:id="@+id/NameCity"
@@ -35,18 +35,18 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewToday"
-        android:layout_width="413dp"
-        android:layout_height="505dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="30dp"
-        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5sp"
+        android:layout_marginRight="5sp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="195sp"
+        android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageButton
         android:id="@+id/imageButtonReboot"

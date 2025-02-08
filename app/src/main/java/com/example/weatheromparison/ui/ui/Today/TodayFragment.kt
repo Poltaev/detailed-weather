@@ -29,6 +29,7 @@ import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.google.android.gms.tasks.CancellationTokenSource
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlin.math.log
 
@@ -80,16 +81,15 @@ class TodayFragment : Fragment() {
 
     private fun getAdapter() {
         lifecycleScope.launch {
-            Log.i("fh", "Загрузка1")
             val getWeather = viewModel.getTodaYWeather(lon, lat)
-            Log.i("fh", "Загрузка2")
             binding.NameCity.text = getWeather.city.name
             val listWeatherToday = mutableListOf<Temp>()
             for (x in 0..8) {
                 listWeatherToday.add(getWeather.list[x])
             }
             val listWeatherTodayAdapter = TodayAdapter(listWeatherToday)
-            binding.recyclerViewToday.adapter = listWeatherTodayAdapter
+                binding.recyclerViewToday.adapter = listWeatherTodayAdapter
+
         }
     }
 

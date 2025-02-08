@@ -29,6 +29,7 @@ import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 import com.google.android.gms.tasks.CancellationTokenSource
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ThreeHoursFragment : Fragment() {
@@ -82,56 +83,71 @@ class ThreeHoursFragment : Fragment() {
         lifecycleScope.launch {
             val listTempo = viewModel.getThreeHoursWeather(lon, lat)
             val tempo = listTempo.list[1]
-            binding.NameCity.text = listTempo.city.name
-            binding.dataAndTime.text = tempo.dt_txt
-            binding.textTempo.text = tempo.main.temp.toString() + " °С"
-            binding.textTempoFell.text = tempo.main.feels_like.toString() + " °С"
-            binding.textTempoMax.text = tempo.main.temp_max.toString() + " °С"
-            binding.textTempoMin.text = tempo.main.temp_min.toString() + " °С"
-            binding.textCloudCover.text = tempo.weather[0].description
-            binding.textSpeedWind.text = tempo.wind.speed.toString() + " м/с"
-            when (tempo.wind.deg) {
-                in 0..22 -> {
-                    binding.textDirectionWind.text = "Северный"
-                }
+                var dataTime = ""
+                dataTime += tempo.dt_txt[11]
+                dataTime += tempo.dt_txt[12]
+                dataTime += tempo.dt_txt[13]
+                dataTime += tempo.dt_txt[14]
+                dataTime += tempo.dt_txt[15]
+                dataTime += tempo.dt_txt[10]
+                dataTime += tempo.dt_txt[8]
+                dataTime += tempo.dt_txt[9]
+                dataTime += "."
+                dataTime += tempo.dt_txt[5]
+                dataTime += tempo.dt_txt[6]
+                binding.NameCity.text = listTempo.city.name
+                binding.dataAndTime.text = dataTime
+                binding.textTempo.text = tempo.main.temp.toString() + " °С"
+                binding.textTempoFell.text = tempo.main.feels_like.toString() + " °С"
+                binding.textTempoMax.text = tempo.main.temp_max.toString() + " °С"
+                binding.textTempoMin.text = tempo.main.temp_min.toString() + " °С"
+                var firstLetter = tempo.weather[0].description.take(1).uppercase()
+                var repleseLetter = tempo.weather[0].description.take(1)
+                var cloudCover = tempo.weather[0].description.replaceFirst(repleseLetter, firstLetter, true)
+                binding.textCloudCover.text = cloudCover
+                binding.textSpeedWind.text = tempo.wind.speed.toString() + " м/с"
 
-                in 23..67 -> {
-                    binding.textDirectionWind.text = "Северно-Восточный"
-                }
+                when (tempo.wind.deg) {
+                    in 0..22 -> {
+                        binding.textDirectionWind.text = "Северный"
+                    }
 
-                in 67..112 -> {
-                    binding.textDirectionWind.text = "Восточный"
-                }
+                    in 23..67 -> {
+                        binding.textDirectionWind.text = "Северно-Восточный"
+                    }
 
-                in 112..158 -> {
-                    binding.textDirectionWind.text = "Юго-Восточный"
-                }
+                    in 67..112 -> {
+                        binding.textDirectionWind.text = "Восточный"
+                    }
 
-                in 158..202 -> {
-                    binding.textDirectionWind.text = "Южный"
-                }
+                    in 112..158 -> {
+                        binding.textDirectionWind.text = "Юго-Восточный"
+                    }
 
-                in 202..248 -> {
-                    binding.textDirectionWind.text = "Юго-Западный"
-                }
+                    in 158..202 -> {
+                        binding.textDirectionWind.text = "Южный"
+                    }
 
-                in 248..292 -> {
-                    binding.textDirectionWind.text = "Восточный"
-                }
+                    in 202..248 -> {
+                        binding.textDirectionWind.text = "Юго-Западный"
+                    }
 
-                in 292..338 -> {
-                    binding.textDirectionWind.text = "Северо-Восточный"
-                }
+                    in 248..292 -> {
+                        binding.textDirectionWind.text = "Восточный"
+                    }
 
-                in 338..360 -> {
-                    binding.textDirectionWind.text = "Северный"
-                }
-            }
-            binding.textMaxWind.text = tempo.wind.gust.toString() + " м/с"
-            binding.textProbabilityOfPrecipitation.text = (tempo.pop * 100).toString() + " %"
-            binding.textPercentageOfClouds.text = tempo.clouds.all.toString() + " %"
-            binding.textVisibility.text = tempo.visibility.toString() + " м"
+                    in 292..338 -> {
+                        binding.textDirectionWind.text = "Северо-Восточный"
+                    }
 
+                    in 338..360 -> {
+                        binding.textDirectionWind.text = "Северный"
+                    }
+                }
+                binding.textMaxWind.text = tempo.wind.gust.toString() + " м/с"
+                binding.textProbabilityOfPrecipitation.text = (tempo.pop * 100).toString() + " %"
+                binding.textPercentageOfClouds.text = tempo.clouds.all.toString() + " %"
+                binding.textVisibility.text = tempo.visibility.toString() + " м"
         }
     }
 
@@ -160,11 +176,6 @@ class ThreeHoursFragment : Fragment() {
             ) == PackageManager.PERMISSION_GRANTED
         }
         if (isAllGranted) {
-            Toast.makeText(
-                requireContext().applicationContext,
-                "Permission is  granted",
-                Toast.LENGTH_SHORT
-            ).show()
             startLocation()
         } else {
             launcher.launch(REQUEST_PERMISSONS)

@@ -29,6 +29,7 @@ import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
+import kotlinx.coroutines.Dispatchers
 
 
 import kotlinx.coroutines.launch
@@ -81,9 +82,7 @@ class FiveDaysFragment : Fragment() {
 
     private fun getAdapter() {
         lifecycleScope.launch {
-            Log.i("fh", "Загрузка1")
             val getWeather = viewModel.getFiveDayWeather(lon, lat)
-            Log.i("fh", "Загрузка2")
             val listWeatherToday = mutableListOf<Temp>()
             binding.NameCity.text = getWeather.city.name
             for (x in 0..39) {
