@@ -7,9 +7,9 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="405sp"
-        android:layout_height="463sp"
-        android:layout_marginTop="4sp"
+        android:layout_width="373dp"
+        android:layout_height="413dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,10 +21,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="184sp"
-        android:layout_marginTop="32sp"
+        android:layout_marginTop="32dp"
         android:text="T чувств:"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textDataAndTime" />
 
     <TextView
@@ -36,7 +36,7 @@
         android:text="T min:"
         android:textColor="@color/teal_200"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
@@ -47,7 +47,7 @@
         android:layout_marginTop="4sp"
         android:text="T max:"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
@@ -58,7 +58,7 @@
         android:layout_marginTop="2sp"
         android:text="Скорость ветра:"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textCloudCover" />
 
     <TextView
@@ -66,22 +66,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40sp"
-        android:layout_marginTop="8sp"
+        android:layout_marginTop="6sp"
         android:text="Ветер:"
         android:textColor="@color/teal_200"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40sp"
-        android:layout_marginTop="8sp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="6dp"
         android:text="Порывы ветра до:"
+
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
@@ -89,11 +90,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40sp"
-        android:layout_marginTop="8sp"
+        android:layout_marginTop="6sp"
         android:text="Вероятность осадков:"
         android:textColor="@color/teal_200"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
@@ -101,10 +102,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40sp"
-        android:layout_marginTop="8sp"
+        android:layout_marginTop="6sp"
         android:text="Процент облаков:"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <TextView
@@ -112,36 +113,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40sp"
-        android:layout_marginTop="8sp"
+        android:layout_marginTop="6sp"
         android:text="Видимость:"
         android:textColor="@color/teal_200"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <TextView
         android:id="@+id/textTempo"
         android:layout_width="138sp"
         android:layout_height="80sp"
-        android:layout_marginTop="32sp"
-        android:layout_marginEnd="236dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="208dp"
         android:gravity="center"
         android:text="TextView"
         android:textColor="@color/teal_200"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textDataAndTime" />
 
     <TextView
         android:id="@+id/textTempoFell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32sp"
-        android:layout_marginEnd="64sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
         android:text="TextView"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textDataAndTime" />
 
     <TextView
@@ -149,11 +150,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4sp"
-        android:layout_marginEnd="64sp"
+        android:layout_marginEnd="40dp"
         android:text="TextView"
         android:textColor="@color/teal_200"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textTempoFell" />
 
     <TextView
@@ -161,10 +162,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4sp"
-        android:layout_marginEnd="64sp"
+        android:layout_marginEnd="40dp"
         android:text="TextView"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textTempoMin" />
 
     <TextView
@@ -175,9 +176,9 @@
         android:text="TextView"
         android:textColor="@color/teal_200"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textTempoMax" />
 
     <TextView
@@ -185,82 +186,81 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2sp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="48dp"
         android:text="TextView"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textCloudCover" />
 
     <TextView
         android:id="@+id/textDirectionWind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="48dp"
         android:text="TextView"
         android:textColor="@color/teal_200"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textSpeedWind" />
 
     <TextView
         android:id="@+id/textMaxWind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8sp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginTop="6sp"
+        android:layout_marginEnd="48dp"
         android:text="TextView"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textDirectionWind" />
 
     <TextView
         android:id="@+id/textProbabilityOfPrecipitation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8sp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginTop="6sp"
+        android:layout_marginEnd="48dp"
         android:text="TextView"
         android:textColor="@color/teal_200"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textMaxWind" />
 
     <TextView
         android:id="@+id/textPercentageOfClouds"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8sp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginTop="6sp"
+        android:layout_marginEnd="48dp"
         android:text="TextView"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textProbabilityOfPrecipitation" />
 
     <TextView
         android:id="@+id/textVisibility"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="48dp"
         android:text="TextView"
         android:textColor="@color/teal_200"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textPercentageOfClouds" />
 
     <TextView
         android:id="@+id/textDataAndTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="16sp"
-        android:layout_marginStart="23sp"
-        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
         android:text="Дата и время"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

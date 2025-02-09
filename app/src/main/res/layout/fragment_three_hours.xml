@@ -38,13 +38,12 @@
         android:id="@+id/dataAndTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="208dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="168dp"
         android:alpha="1"
-        android:textSize="20sp"
         android:text="2024-10-11 00:00:00"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -149,20 +148,23 @@
         android:text="Видимость:"
         android:textColor="@color/teal_200"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textTempo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="260dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
         android:text="TextView"
         android:textColor="@color/teal_200"
         android:textSize="32dp"
+
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
@@ -215,10 +217,10 @@
         android:id="@+id/textCloudCover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="172dp"
         android:text="TextView"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textTempo" />
 
     <TextView
@@ -265,24 +267,27 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textProbabilityOfPrecipitation" />
+
     <TextView
         android:id="@+id/textVisibility"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="24dp"
         android:text="TextView"
         android:textColor="@color/teal_200"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPercentageOfClouds" />
+        app:layout_constraintTop_toBottomOf="@+id/textPercentageOfClouds"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/imageButtonReboot"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginStart="344dp"
+        android:layout_marginTop="140dp"
         android:background="@color/yellowInvisible"
         android:src="@drawable/baseline_autorenew_24"
         app:layout_constraintStart_toStartOf="@+id/imageView"
