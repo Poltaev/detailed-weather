@@ -20,4 +20,3 @@ Android Developer с 1-летним опытом разработки разра
 ## Контакты
 - Email: evgeny.poltaev@yandex.ru
 - Telegram: https://t.me/PoltaevE
-
