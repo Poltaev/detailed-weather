@@ -14,7 +14,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/frame_blue" />
+        app:srcCompat="@drawable/baseline_crop_free_24" />
 
     <TextView
         android:id="@+id/textView4"
